@@ -1,4 +1,4 @@
-package com.algmachine.controller;
+package com.algmachine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,5 +9,4 @@ public class AlgMachineApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AlgMachineApplication.class, args);
 	}
-
 }
