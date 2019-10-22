@@ -1,0 +1,68 @@
+buildscript {
+    ext {
+        springBootVersion = '2.1.7.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+
+plugins {
+    id 'java'
+    id 'com.gradle.build-scan' version '2.0.2'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'io.spring.dependency-management'  version '1.0.7.RELEASE'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
+    implementation 'mysql:mysql-connector-java:8.0.17'
+    implementation 'tk.mybatis:mapper:4.1.5'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE'
+    implementation 'io.swagger:swagger-annotations:1.5.10'
+
+    testImplementation 'org.springframework.boot:spring-boot-test:2.1.7.RELEASE'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.springframework:spring-test:5.1.9.RELEASE'
+
+    components {
+        withModule('org.springframework:spring-beans') {
+            allVariants {
+                withDependencyConstraints {
+                    // Need to patch constraints because snakeyaml is an optional dependency
+                    it.findAll { it.name == 'snakeyaml' }.each { it.version { strictly '1.19' } }
+                }
+            }
+        }
+    }
+}
+
+buildScan {
+    // always accept the terms of service
+    termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+    termsOfServiceAgree = 'yes'
+
+    // always publish a build scan
+    publishAlways()
+}
+
+bootJar {
+    mainClassName = 'com.algmachine.AlgMachineApplication'
+}
+
+group = 'com.algmachine'
+version = '0.0.1-SNAPSHOT'
+description = 'web'
+sourceCompatibility = '1.8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
