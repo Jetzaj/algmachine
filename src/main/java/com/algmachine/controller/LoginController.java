@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value = "/api/login")
 public class LoginController {
 
-
     @ApiOperation(value = "测试登录接口")
-    @RequestMapping(value = "/v1.0/on", method = RequestMethod.GET)
+    @RequestMapping(value = "/v1.0/test", method = RequestMethod.GET)
     public void loginWeb(@RequestParam("userId") String userId) {
-        System.out.println("hello world!");
+        System.out.println("hello world!" + userId);
     }
 }

@@ -23,9 +23,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
-    implementation 'mysql:mysql-connector-java:8.0.17'
-    implementation 'tk.mybatis:mapper:4.1.5'
     implementation 'org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE'
     implementation 'io.swagger:swagger-annotations:1.5.10'
 
