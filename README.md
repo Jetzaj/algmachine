@@ -1,2 +1,1 @@
-# algmachine
-Base java algorithm and structure
+# algmachine to test the technology
