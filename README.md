@@ -6,7 +6,8 @@
 
 #### 项目介绍
 
-Java web项目，链接：https://algmachine.com/ ，项目前端由同为转行而来的Stanley(https://github.com/swiftwind0405),所以惺惺相惜，结对编程，共同提高。
+Java web项目，链接：https://algmachine.com/ ，项目前端由同为转行而来的Stanley(https://github.com/swiftwind0405),
+所以惺惺相惜，结对编程，共同提高。
 说起这个域名，其实是为了打磨作者自身基础 如数据结构、算法、设计模式的学习，取算法（algorithm）前三个字母 alg，并希望如永动机一般终身学习，所以algmachine 由此得来。
 
 项目技术栈：
