@@ -11,13 +11,15 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.reflect.AnnotatedType;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AlgMachineApplication.class)
 public class ProxyTest {
 
 
-//    @Ignore
+    @Ignore
     @Test
     public void test_static_proxy_method() {
         RealSubject realSubject = new RealSubject();
@@ -29,6 +31,15 @@ public class ProxyTest {
     @Test
     public void test_dynamic_proxy_method() {
         Subject subject = RealSubjectDynamicProxy.newProxyInstance();
-        subject.request();
+        String response = subject.request();
+        System.out.println(response);
     }
+
+    @Ignore
+    @Test
+    public void test_get_interface(){
+        AnnotatedType[] annotatedTypes =  RealSubject.class.getAnnotatedInterfaces();
+        System.out.println("-----");
+    }
+
 }

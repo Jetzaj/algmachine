@@ -8,9 +8,10 @@ public class RealSubjectStaticProxy implements Subject {
     }
 
     @Override
-    public void request() {
+    public String request() {
         System.out.println("代理准备发出的请求");
-        realSubject.request();
+        String resp = realSubject.request();
         System.out.println("代理已经执行请求");
+        return resp;
     }
 }
