@@ -13,15 +13,14 @@ public class RealSubjectDynamicProxy implements InvocationHandler {
         //实现懒加载
         //体现出代理一个运行时实例化的特点
         if (realSubject == null) {
-            return realSubject = new RealSubject();
+             realSubject = new RealSubject();
         }
 
         System.out.println("动态代理执行方法");
-        method.invoke(realSubject, args);
-        return realSubject;
+        return method.invoke(realSubject, args);
     }
 
     public static Subject newProxyInstance() {
-        return (Subject) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), RealSubject.class.getInterfaces(), new RealSubjectDynamicProxy());
+        return (Subject) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(), new Class<?>[]{Subject.class}, new RealSubjectDynamicProxy());
     }
 }
