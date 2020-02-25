@@ -22,10 +22,11 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.1.7.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-parent:2.1.7.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    testImplementation 'org.springframework.boot:spring-boot-test'
     implementation 'io.swagger:swagger-annotations:1.5.10'
-
-    testImplementation 'org.springframework.boot:spring-boot-test:2.1.7.RELEASE'
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.springframework:spring-test:5.1.9.RELEASE'
 

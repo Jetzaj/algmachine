@@ -1,4 +1,7 @@
-package com.algmachine.service.proxy;
+package com.algmachine.service.proxy.jdk;
+
+import com.algmachine.service.proxy.RealSubject;
+import com.algmachine.service.proxy.Subject;
 
 public class RealSubjectStaticProxy implements Subject {
     RealSubject realSubject;

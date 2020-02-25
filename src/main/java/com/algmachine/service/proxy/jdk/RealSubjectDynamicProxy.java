@@ -1,4 +1,7 @@
-package com.algmachine.service.proxy;
+package com.algmachine.service.proxy.jdk;
+
+import com.algmachine.service.proxy.RealSubject;
+import com.algmachine.service.proxy.Subject;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
