@@ -52,7 +52,7 @@ public class ProxyTest {
         enhancer.setCallback(new RealSubjectCglibProxy());
 
         Subject realSubject = (RealSubject) enhancer.create();
-        realSubject.request();
+        System.out.println(realSubject.request());
     }
 
 }
