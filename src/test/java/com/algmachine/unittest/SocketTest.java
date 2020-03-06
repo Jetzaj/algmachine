@@ -2,6 +2,7 @@ package com.algmachine.unittest;
 
 import com.algmachine.AlgMachineApplication;
 import com.algmachine.service.socket.GreetClient;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,6 +13,7 @@ import java.io.IOException;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AlgMachineApplication.class)
 public class SocketTest {
+    @Ignore
     @Test
     public void client_test() throws IOException {
         GreetClient client = new GreetClient();
@@ -20,6 +22,7 @@ public class SocketTest {
         System.out.println(response);
     }
 
+    @Ignore
     @Test
     public void givenClient1_whenServerResponds_thenCorrect() throws IOException {
         GreetClient client1 = new GreetClient();
@@ -30,6 +33,7 @@ public class SocketTest {
 
     }
 
+    @Ignore
     @Test
     public void givenClient2_whenServerResponds_thenCorrect() throws IOException {
         GreetClient client2 = new GreetClient();
