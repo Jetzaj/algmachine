@@ -1,7 +1,7 @@
 package com.algmachine.controller;
 
+import com.algmachine.dto.UserRequest;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -14,5 +14,14 @@ public class LoginController {
 
         System.out.println("hello world!" + userId);
         return userId;
+    }
+
+
+    @ApiOperation(value = "测试登录接口")
+    @RequestMapping(value = "/v1.0/json/test", method = RequestMethod.POST)
+    public String loginWebForJson(@RequestBody UserRequest request) {
+
+        System.out.println("hello world!" + request.getUserId());
+        return request.getUserId();
     }
 }
