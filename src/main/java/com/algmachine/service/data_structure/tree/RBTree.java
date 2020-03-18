@@ -42,7 +42,27 @@ public class RBTree<T extends Comparable<T>> {
         return addNode(t);
     }
 
-    private T addNode(RBTreeNode<T> node) {
+    public RBTreeNode<T> findNode(RBTreeNode<T> node) {
+        T key = node.getValue();
+        RBTreeNode<T> root = getRoot();
+
+        while (true) {
+            if (null == root) {
+                break;
+            }
+            if (root.getValue().equals(key)) {
+                return root;
+            } else if (key.compareTo(root.getValue()) < 0) {
+                root = root.getLeft();
+            } else {
+                root = root.getRight();
+            }
+        }
+        return null;
+    }
+
+
+    public T addNode(RBTreeNode<T> node) {
         node.setLeft(null);
         node.setRight(null);
         node.setRed(true);
@@ -89,8 +109,7 @@ public class RBTree<T extends Comparable<T>> {
             if (cmp == 0) {
                 return child;
             }
-
-            if (cmp > 0) {
+            else if (cmp > 0) {
                 dataRoot = child;
                 child = child.getLeft();
             } else {
