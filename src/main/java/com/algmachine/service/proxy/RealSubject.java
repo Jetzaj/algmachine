@@ -1,7 +1,8 @@
 package com.algmachine.service.proxy;
 
-import com.algmachine.service.proxy.Subject;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RealSubject implements Subject {
     @Override
     public String request() {
