@@ -33,4 +33,24 @@ public class BTree<T> {
         }
         return result;
     }
+
+    public int minDepth(BTreeNode<T> root) {
+        int minDepth = 0;
+        if (null == root) return minDepth;
+        
+        Queue<BTreeNode<T>> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            minDepth++;
+            BTreeNode<T> node = queue.poll();
+            int len = queue.size();
+            for (int i = 0; i < len; i++) {
+                if (node.left != null && node.right != null) {
+                    queue.add(node.left);
+                    queue.add(node.right);
+                }
+            }
+        }
+        return minDepth;
+    }
 }
