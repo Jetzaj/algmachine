@@ -25,6 +25,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-parent:2.1.7.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
+    implementation 'org.apache.commons:commons-lang3:3.10'
+
+    compile fileTree(dir: 'lib', includes: ['*.jar'])
+
     testImplementation 'org.springframework.boot:spring-boot-test'
     implementation 'io.swagger:swagger-annotations:1.5.10'
     testImplementation 'junit:junit:4.12'
