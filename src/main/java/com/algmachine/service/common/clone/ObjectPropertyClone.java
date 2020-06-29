@@ -6,6 +6,9 @@ public class ObjectPropertyClone implements Cloneable, Serializable {
     private String name;
     private double propertyA;
 
+    public ObjectPropertyClone() {
+    }
+
     public ObjectPropertyClone(String name, double propertyA) {
         this.name = name;
         this.propertyA = propertyA;

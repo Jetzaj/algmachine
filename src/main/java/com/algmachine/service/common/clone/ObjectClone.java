@@ -7,6 +7,9 @@ public class ObjectClone implements Cloneable, Serializable {
     private int value;
     private ObjectPropertyClone property;
 
+    public ObjectClone() {
+    }
+
     public ObjectClone(String name, int value, ObjectPropertyClone property) {
         this.name = name;
         this.value = value;
