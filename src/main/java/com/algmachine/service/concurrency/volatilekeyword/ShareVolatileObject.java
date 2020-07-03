@@ -1,4 +1,4 @@
-package com.algmachine.service.concurrency;
+package com.algmachine.service.concurrency.volatilekeyword;
 
 import java.net.Socket;
 
